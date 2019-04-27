@@ -1,9 +1,9 @@
-object knightRider {
+object kr {
 	method peso() { return 500 }
 	method nivelPeligrosidad() { return 10 }
 }
 
-object bumblebee {
+object bb {
 	var transformadoEnAuto = true
 	
 	method peso() { return 800 }
@@ -30,4 +30,36 @@ object paqueteDeLadrillos{
 	method peso(){	return  paqueteLadrillos }
 	
 	method nivelPeligroisdad(){ return (50 - cantRefuerzos).max(0)	}
+}
+
+object bAnti {
+	var property estado = nueva
+	
+	method peso(){
+		return estado.peso
+	}
+	method peligrosidad(){
+		return estado.peligrosidad
+	}
+}
+
+object nueva{
+	var peso = 200
+	var peligrosidad = 5
+}
+object cargada{
+	var peso = 300
+	var peligrosidad = 100
+}
+object descargada{
+	var peso = 220 
+	var peligrosidad = 25
+}
+
+object contenedorPuerto{
+	var property peso = 100
+	const property contenido = []
+		method pesoTotal(){
+		return peso + contenido.sum{cosa => cosa.peso()}//revisar la logica de esto
+	}
 }

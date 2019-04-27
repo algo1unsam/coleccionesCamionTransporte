@@ -1,17 +1,13 @@
 import cosas.*
 
-object camion {
+object camion{
 	const property cosas = []
-	
+	var property enRuta = false
 	var property peso = 1000
 	var property cargaMax = 2500
 	
-	method cargar(unaCosa) {
-		cosas.add(unaCosa)
-	}
-	method descargar(unaCosa){
-		cosas.remove(unaCosa)
-	}
+	method cargar(unaCosa) {cosas.add(unaCosa)	}
+	method descargar(unaCosa){cosas.remove(unaCosa)	}
 	method pesoTotal(){
 		return peso + cosas.sum{cosa => cosa.peso()}
 	}
@@ -32,8 +28,28 @@ object camion {
 	}//retorna la cosa mas pesada no su peso
 	method convieneCargar(cosa) = (self.cond1(cosa) and self.cond2(cosa))
 		
-		method cond1(cosa) = (cosa.peso() + self.pesoTotal() < cargaMax)
+		method cond1(cosa) = ((cosa.peso() + self.pesoTotal()) < cargaMax)
 		
-		method cond2(cosa) = cosas.any{otraCosa => otraCosa.nivelPeligrosidad() > cosa.nivelPeligrosidad() }	
+		method cond2(cosa) = cosas.any{cosa2 => cosa2.nivelPeligrosidad() > cosa2.nivelPeligrosidad() }	
 			
 }
+object camioneta {
+	const property cosas = []
+	var property enRuta = false
+	var peso = 900
+	var limite = 5
+	method peso(){
+		return peso
+	} 
+	method cargar(unaCosa) {cosas.add(unaCosa)	}
+	method descargar(unaCosa){cosas.remove(unaCosa)	}
+	method queLleva(){
+		return cosas
+	}// no se si esto funciona
+	method estaEnPeligro(){
+		return cosas > limite
+	}
+
+
+}
+
