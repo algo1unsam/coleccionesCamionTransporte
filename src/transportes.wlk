@@ -1,4 +1,5 @@
 import cosas.*
+import transportes.*
 
 object camion{
 	const property cosas = []
@@ -15,13 +16,13 @@ object camion{
 		return (self.pesoTotal() > cargaMax)
 	}
 	method objetosPeligrosos(nivel){
-		return cosas.filter({unaCosa => unaCosa.nivelPeligroisdad() > nivel})
+		return cosas.filter({unaCosa => unaCosa.nivelPeligrosidad() > nivel})
 	}/*retorna la lista de objetos que superan el nivel */
 	method objetosMasPeligrososQue(cosa){
-		return cosas.filter({unaCosa => unaCosa.nivelPeligroisdad() > cosa.nivelPeligroisdad()})
+		return cosas.filter({unaCosa => unaCosa.nivelPeligrosidad() > cosa.nivelPeligrosidad()})
 	}// devuelve una lista de objetos que superan al objeto con el que lo comparo
 	method puedeCircularEnRuta(nivelmaximopeligrosidad){
-		return cosas.all{ unacosa => unacosa.nivelPeligrosidad() <= nivelmaximopeligrosidad}
+		return cosas.all({ unacosa => (unacosa.nivelPeligrosidad()) <= nivelmaximopeligrosidad})
 	}// retorna true or false
 	method cosaMasPesada(){
 		return cosas.max{unaCosa => unaCosa.peso()}

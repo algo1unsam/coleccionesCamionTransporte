@@ -2,14 +2,17 @@ import transportes.*
 import deposito.*
 
 object kr {
-	method peso() { return 500 }
-	method nivelPeligrosidad() { return 10 }
+	var peso = 500
+	var nivelPeligrosidad = 10
+	method peso() { return peso}
+	method nivelPeligrosidad(){ return nivelPeligrosidad }
 }
 
 object bb {
 	var transformadoEnAuto = true
-	
-	method peso() { return 800 }
+	var peso = 800
+
+	method peso() { return peso }
 	method nivelPeligrosidad() { return if (transformadoEnAuto) { 15 } else { 30 }  }
 	method transformar() { transformadoEnAuto = not transformadoEnAuto }
 }
@@ -20,9 +23,9 @@ object paqueteDeLadrillos{
 	var pesoRefuerzo = 10
 	var pesoLadrillo = 2
 	var cantRefuerzos 
-	var property cantLadrillos = 0 
+	//var property cantLadrillos = 0 
 	
-	method calculoPeso(){
+	method calculoPeso(cantLadrillos){
 			if (cantLadrillos < 1000){
 			cantRefuerzos = (cantLadrillos/100).roundUp()
 		}else{
@@ -32,7 +35,7 @@ object paqueteDeLadrillos{
 	}	
 	method peso(){	return  paqueteLadrillos }
 	
-	method nivelPeligroisdad(){ return (50 - cantRefuerzos).max(0)	}
+	method nivelPeligrosidad(){ return (50 - cantRefuerzos).max(0)	}
 }
 
 object bAnti {
@@ -62,11 +65,11 @@ object contenedorPuerto{
 	const property contenido = []
 		method cargar(unaCosa) {contenido.add(unaCosa)	}
 		method descargar(unaCosa){contenido.remove(unaCosa)	}
-		method pesoTotal(){
+		method peso(){
 			return peso + contenido.sum{cosa => cosa.peso()}//revisar la logica de esto
 		}
 		method nivelPeligrosidad(){
-			return return contenido.max{unaCosa => unaCosa.nivelPeligrosidad()}
+			return contenido.max{unaCosa => unaCosa.nivelPeligrosidad()}
 		}
 }
 object embalajeDeSeguridad{
@@ -79,7 +82,7 @@ object embalajeDeSeguridad{
 	method peso(){
 		return peso
 	}
-	method nivel(){
+	method nivelPeligrosidad(){
 		return nivelPeligrosidad
 	}
 	
