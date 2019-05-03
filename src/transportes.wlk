@@ -1,5 +1,5 @@
 import cosas.*
-import transportes.*
+
 
 object camion{
 	const property cosas = []

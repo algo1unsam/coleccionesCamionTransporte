@@ -31,7 +31,7 @@ describe "tests de transportes" {
 	}
 	
 	test "objetos peligrosos"{
-		assert.equals(#{"paqueteDeLadrillos","bb"}, camion.objetosPeligrosos(14))
+		assert.equals(#{"paqueteDeLadrillos","kr"}, camion.objetosPeligrosos(14))
 		
 	}
 	test " objeto mas peligroso"{
@@ -39,8 +39,8 @@ describe "tests de transportes" {
 		
 	}
 	test " puede circular "{
-		assert.equals(false, camion.puedeCircularEnRuta(1))
-		assert.equals(true, camion.puedeCircularEnRuta(1000))
+		assert.notThat( camion.puedeCircularEnRuta(1))
+		assert.that( camion.puedeCircularEnRuta(1000))
 		
 	}
 	test " cosa Mas Pesada"{

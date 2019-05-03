@@ -1,5 +1,6 @@
 import transportes.*
 import deposito.*
+import cosas.*
 
 describe "tests de las cosas" {
 

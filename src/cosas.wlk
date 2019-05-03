@@ -3,9 +3,9 @@ import deposito.*
 
 object kr {
 	var peso = 500
-	var nivelPeligrosidad = 10
+	var peligrosidad = 10
 	method peso() { return peso}
-	method nivelPeligrosidad(){ return nivelPeligrosidad }
+	method nivelPeligrosidad(){ return peligrosidad }
 }
 
 object bb {
