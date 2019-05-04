@@ -32,7 +32,6 @@ describe "tests de transportes" {
 	
 	test "objetos peligrosos"{
 		assert.equals(["paqueteDeLadrillos","kr"], camion.objetosPeligrosos(14))
-		//cambio de prueba para poder comitear
 	}
 	test " objeto mas peligroso"{
 		assert.equals(paqueteDeLadrillos, camion.objetosMasPeligrososQue(bb))
