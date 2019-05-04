@@ -31,7 +31,7 @@ describe "tests de transportes" {
 	}
 	
 	test "objetos peligrosos"{
-		assert.equals(#{"paqueteDeLadrillos","kr"}, camion.objetosPeligrosos(14))
+		assert.equals(["paqueteDeLadrillos","kr"], camion.objetosPeligrosos(14))
 		
 	}
 	test " objeto mas peligroso"{
