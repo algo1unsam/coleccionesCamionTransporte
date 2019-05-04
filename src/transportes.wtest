@@ -36,7 +36,7 @@ describe "tests de transportes" {
 	}
 	test " objeto mas peligroso"{
 		assert.equals(paqueteDeLadrillos, camion.objetosMasPeligrososQue(bb))
-		//
+		//cambio de prueba para poder comitear
 	}
 	test " puede circular "{
 		assert.notThat( camion.puedeCircularEnRuta(1))
