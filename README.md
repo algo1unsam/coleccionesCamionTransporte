@@ -36,11 +36,14 @@ La **camioneta** pesa 900kg y puede transportar un máximo de 5 cosas (no import
 
 ## El depósito
 
-El **depósito** es el lugar donde se almacenan los transportes y sale la mercadería. 
+El **depósito** es el lugar donde se almacenan los vehículos cuando no están en la ruta. También se utilizar para cargar mercadería en los vehículos. 
 Se pide:
-- poder controlar los vehículos que entran y salen.
+- poder controlar los vehículos que entran y salen del depósito.
 - saber si está en peligro, que ocurrre cuando la cantidad de vehículos excedidos de carga es mayor a 1.
-- que entienda el mensaje `enviar(cosas)` que dada una colección de cosas las cargue todas en un vehículo cualquiera y lo saque a la ruta.
+- que entienda el mensaje `enviar(cosas)` que, dada una colección de cosas,
+  1. elija un vehículo cualquiera de los que están en el depósito
+  2. cargue todas las cosas a dicho vehiculo
+  3. sacar al vehículo del depósito, para dejar indicado que está en viaje
 
 ## Más cosas
 
