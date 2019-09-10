@@ -14,6 +14,8 @@ De las cosas que se pueden transportar nos interesa el peso y la peligrosidad:
 - **Paquete de ladrillos**: cada ladrillo pesa 2 kilos, la cantidad de ladrillos que tiene puede variar. Para que el paquete no se desarme, lleva refuerzos, que pesan 10kg cada uno. Si el paquete tiene hasta 1000 ladrillos, se utiliza un refuerzo cada 100 ladrillos. Si tiene más ladrillos se debe utilizar un refuerzo cada 50 ladrillos.
   Los refuerzos se usan enteros, no se puede usar medio refuerzo; por ejemplo para 950 ladrillos se usan 10 refuerzos y para 1020 ladrillos se necesitan 21 refuerzos.
   La peligrosidad es igual a 50 menos la cantidad de refuerzos utilizados (pero no puede ser negativa, siendo 0 el mínimo posible).
+  
+> Testear el peso y la peligrosidad para un paquete de 950 ladrillos y otro de 1020 ladrillos. 
 
 ## Los transportes
 
@@ -29,10 +31,14 @@ Se pide que entienda los siguientes mensajes:
 - `cosaMasPesada()`: la cosa más pesada que tenga el camión. Ojo que lo que se pide es _la cosa_ y no su peso.
 - `convieneCargar(cosa)`: consideramos que conviene cargar una cosa en el camión si la cosa entra en el camión (sumándole la cosa nueva a la carga existente no se supera la carga máxima) y si hay ya cargado en el camión algún objeto más peligroso que la cosa que queremos cargar.
 
+> Hacer al menos un test para cada método pedido.
+
 La **camioneta** pesa 900kg, aunque puede ser modificado, y puede transportar un máximo de 5 cosas (no importa el peso). Se quiere:
 
-- poder cargar y descargar cosas. La camioneta nunca puede cargar una cosa que pese más que ella misma (si se intenta hacerlo, debe fallar como corresponde).
+- poder cargar y descargar cosas. La camioneta nunca puede cargar una cosa que pese más que ella misma (si se intenta hacerlo, debe lanzar un error como corresponde).
 - saber si está excecido de carga, que sucede cuando que lleva más cargas que su máximo.
+
+> Hacer al menos un test que pruebe que se lanza error al querer cargar un paquete de 500 ladrillos en la camioneta.
 
 ## El depósito
 
@@ -45,6 +51,8 @@ Se pide:
   2. cargar todas las cosas a dicho vehiculo, teniendo en cuenta las validaciones del vehículo. Esto deja vacío de cosas el depósito
   3. sacar al vehículo del depósito, para dejar indicado que está en viaje
 
+> Testear al menos el último punto.
+
 ## Más cosas
 
 - **Batería antiaérea**: el peso y peligrosidad de la bateria depende de su estado que puede ser nueva, cargada o agotada.
@@ -53,3 +61,5 @@ Se pide:
   Luego de utilizarla, pasa a estar agotada, su peso es de 220 y su peligrosidad 25.
 - **Contenedor portuario**: un contenedor puede tener otras cosas adentro. El peso es 100 + la suma de todas las cosas que estén adentro. Es tan peligroso como el objeto más peligroso que contiene. Si está vacío, su peligrosidad es 0.
 - **Embalaje de seguridad**: es una cobertura que envuelve a cualquier otra cosa. El peso es el peso de la cosa que tenga adentro. El nivel de peligrosidad es la mitad del nivel de peligrosidad de lo que envuelve.
+
+> Hacer al menos un test para cada cosa.
